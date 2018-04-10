@@ -16,7 +16,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from Home.views import hello_view
+from django.conf import settings
+from django.conf.urls.static import static
+from Form.views import page1
+from Form.views import page2
+from Form.views import from_index
+from Form.views import page1_csv
+from Form.views import page2_csv
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('hello/', hello_view),
-]
+                  path('admin/', admin.site.urls),
+                  path('hello/', hello_view),
+                  path('pageA/', page1),
+                  path('pageB/', page2),
+                  path('from_Index/', from_index),
+                  path('pageA_csv/', page1_csv),
+                  path('pageB_csv/', page2_csv),
+              ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
