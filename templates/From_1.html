@@ -45,8 +45,7 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li class="active"><a href="../from_Index">功能頁面</a></li>
-                <li class="active"><a href="../pageA">表單A(建檔)</a></li>
-                <li class="active"><a href="../pageB">表單B(建檔)</a></li>
+                <li class="active"><a href="../hello">首頁</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -55,69 +54,70 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 centered">
-                <h1>表單A(建檔)</h1>
-                <form>
+                <h1>分類模式參數設定</h1>
+                <form action="/Process" method="get">
                     <div class="form-group row">
-                        <label for="Data1" class="col-sm-2 col-form-label">Data1</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="Data1" placeholder="Data1">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="Data2" class="col-sm-2 col-form-label">Data2</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="Data2" placeholder="Data2">
+                        <label for="Data1" class="col-sm-3 col-form-label">資料序號</label>
+                        <div class="col-sm-8">
+                            <input type="number" class="form-control" name="index_col" id="index_col">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="Data3" class="col-sm-2 col-form-label">Data3</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="Data3" placeholder="Data3">
+                        <label for="Data1" class="col-sm-3 col-form-label">應變數數量</label>
+                        <div class="col-sm-8">
+                            <input type="number" class="form-control" name="dep_k"id="dep_k">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="Data1" class="col-sm-3 col-form-label">自變數數量</label>
+                        <div class="col-sm-8">
+                            <input type="number" class="form-control" name="ind_k"id="ind_k">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="Data4" class="col-sm-2 col-form-label">Data4</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="Data4" placeholder="Data4">
+                        <label for="Data1" class="col-sm-3 col-form-label">隱藏層數目與各隱藏層神經元</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" name="hidden_units"id="hidden_units">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="Data5" class="col-sm-2 col-form-label">Data5</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="Data5" placeholder="Data5">
+                        <label for="Data2" class="col-sm-3 col-form-label">學習率</label>
+                        <div class="col-sm-8">
+                            <input type="number" class="form-control" value="0.001"name="learning_rate"id="learning_rate" step="0.001">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="Data6" class="col-sm-2 col-form-label">Data6</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="Data6" placeholder="Data6">
+                        <label for="Data3" class="col-sm-3 col-form-label">網路名稱</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" name="network_name"id="network_name">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="Data7" class="col-sm-2 col-form-label">Data7</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="Data7" placeholder="Data7">
+                        <label for="Data4" class="col-sm-3 col-form-label">訓練批次大小</label>
+                        <div class="col-sm-8">
+                            <input type="number" class="form-control"name="batch" id="batch">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="Data8" class="col-sm-2 col-form-label">Data8</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="Data8" placeholder="Data8">
+                        <label for="Data5" class="col-sm-3 col-form-label">訓練循環</label>
+                        <div class="col-sm-8">
+                            <input type="number" class="form-control"name="max_step" id="max_step">
                         </div>
                     </div>
-                                        <div class="form-group row">
-                        <label for="Data9" class="col-sm-2 col-form-label">Data9</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="Data9" placeholder="Data9">
+                    <div class="form-group row">
+                        <label for="Data6" class="col-sm-3 col-form-label">分類總類數目</label>
+                        <div class="col-sm-8">
+                            <input type="number" class="form-control"name="n_classes" id="n_classes">
                         </div>
                     </div>
-                                        <div class="form-group row">
-                        <label for="Data10" class="col-sm-2 col-form-label">Data10</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="Data10" placeholder="Data10">
+
+                    <div class="form-group row">
+                        <div class="col-sm-8">
+                            <input type="hidden" value="classify"name="type" class="form-control" id="type">
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">送出</button>
                 </form>
             </div><!-- /col-lg-8 -->
         </div><!-- /row -->

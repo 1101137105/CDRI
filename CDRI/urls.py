@@ -23,6 +23,8 @@ from Form.views import page2
 from Form.views import from_index
 from Form.views import page1_csv
 from Form.views import page2_csv
+from Form.Process import Process
+
 
 urlpatterns = [
                   path('admin/', admin.site.urls),
@@ -32,4 +34,6 @@ urlpatterns = [
                   path('from_Index/', from_index),
                   path('pageA_csv/', page1_csv),
                   path('pageB_csv/', page2_csv),
+                  path('Process/', Process)
+
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
